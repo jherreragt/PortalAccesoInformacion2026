@@ -1,0 +1,23 @@
+{
+  "name": "portal-general-aip",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "elasticlunr": "^0.9.5",
+    "fs": "^0.0.1-security",
+    "moment": "^2.30.1",
+    "nunjucks": "^3.2.4",
+    "render-markdown-js": "^1.3.0"
+  }
+}

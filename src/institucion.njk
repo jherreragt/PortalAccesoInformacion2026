@@ -1,0 +1,246 @@
+---
+pagination:
+  data: instituciones
+  size: 1
+  alias: instituciones
+  addAllPagesToCollections: true
+permalink: "instituciones/{{instituciones.name | slug}}/index.html"
+tags:
+  - instituciones
+---
+{% extends "src/base.njk" %}
+
+{% extends "src/base.njk" %}
+
+
+{% block head %}
+    <title>Catálogo de Trámites | {{instituciones.name}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--LINK DE REFERENCIA PARA RATING https://www.youtube.com/watch?v=KdO9P8FnVN4&t=0s-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+    <div class="sidebar d-flex">
+        <div><a class="btn" href="#">Evalua</a></div>
+        <div><a class="btn" href="/quejas.html">Reporta</a></div>
+    </div>
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                <span></span> {{instituciones.name}}
+            </div>
+        </div>
+    </div>
+    <div class="page-content mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-11 col-lg-12 m-auto">
+                    <div class="row">
+                        <div class="col-lg-3 primary-sidebar sticky-sidebar pt-50">
+                            <div class="widget-area">
+                                
+                                <!-- Redes -->
+                                <div class="sidebar-widget widget-category-2 mb-50">
+                                    <h5 class="section-title style-1 mb-30">Redes</h5>
+                                    <div>
+                                        <div class="header-action-icon-2">
+                                            <p><i class="fab fa-facebook-f f-18"  aria-hidden="true" ></i> Facebook: <a href="#" class="nav-link-social icono-link" target="_blank">www.loremipsum.com</a></p>              
+                                        </div>
+                                        <br>
+                                        <div class="header-action-icon-2">
+                                            <p><i class="fa-brands fa-x-twitter f-18"></i> Twitter: <a href="#" class="nav-link-social icono-link" target="_blank">www.loremipsum.com</a></p>     
+                                        </div>
+                                        <br>
+                                        <div class="header-action-icon-2">
+                                            <p><i class="fab fa-instagram f-18" aria-hidden="true" ></i> Instagram: <a href="#" class="nav-link-social icono-link" target="_blank">www.loremipsum.com</a></p>     
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Visitar -->
+                                <div class="sidebar-widget widget-category-2 mb-50">
+                                    <h5>Solicitar Información</h5>
+                                    <br>
+                                    <a class="btn mb-20" href="#" target="_blank">Solicitar Información</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-9">
+                            <div class="single-page pt-50 pl-30">
+                                <!-- <div class="single-header style-2">
+                                    <div class="row">
+                                        <div class="col-xl-10 col-lg-12 m-auto">
+                                            <h2 class="mb-10">{{instituciones.name}}</h2>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="single-content">
+                                    <div class="row border-shadow justify-content-center">
+                                        <div class="col-xl-10 col-lg-12 m-auto">
+                                            <h5 class="mb-10">{{instituciones.name}}</h5>
+                                        </div>
+                                        <div class="col-lg-5 my-4 ">
+                                            <p><i class="fa-solid fa-house"></i> Dirección: {{instituciones.address}}</p>
+                                            <br>
+                                            <p><i class="fa-solid fa-phone"></i> Teléfono: {{instituciones.address}}</p>
+                                        </div>
+                                        <div class="col-lg-5 my-4 ">
+                                            <p><i class="fa-solid fa-envelope"></i> Correo: {{instituciones.email}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row border-shadow justify-content-center">
+                                        <div class="col-xl-10 col-lg-12 m-auto texto-servicio">
+                                            <p>{{instituciones.description | rmj |safe}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row border-shadow justify-content-center">
+                                        <div class="col-xl-10 col-lg-12 m-auto texto-servicio">
+                                            <h5>Institución en Datos</h5>
+                                            <div class="row">
+                                                <div class="col-lg-3 ">
+                                                    <div class="line-right text-center h-100">
+                                                        <h5>2685</h5>
+                                                        <p>Documentos</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="line-right text-center h-100">
+                                                        <h5>20/06/2024</h5>
+                                                        <p>Ultima Actualización</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="line-right text-center h-100">
+                                                        <h5>777,123</h5>
+                                                        <p>Descargas de Documentos</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="h-100 text-center">
+                                                        <h5>93</h5>
+                                                        <p>Servicios Disponibles</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row border-shadow justify-content-center">
+                                        <div class="col-xl-10 col-lg-12 m-auto texto-servicio">
+                                            
+                                            
+                                            <div class="row my-4">
+                                                <div class="col-lg-6">
+                                                    <h5>Estándares más descargados</h5>
+                                                    <canvas id="pieChart" width="400" height="400"></canvas>
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <h5>Últimas vistas</h5>
+                                                    <canvas id="lineChart" width="400" height="400"></canvas>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row border-shadow justify-content-center">
+                                        <div class="col-xl-10 col-lg-12 m-auto texto-servicio">
+                                            
+                                            <h5>Documentos más solicitados</h5>
+                                            <p>{{instituciones.description | rmj |safe}}</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    var ctx = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Sales',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.4 // This value controls the curve of the line
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Value'
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
+
