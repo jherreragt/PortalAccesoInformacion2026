@@ -2,18 +2,10 @@ const searchFilter = require('./filters/searchFilter');
 const searchFilterI = require('./filters/searchFilterI');
 const rmj = require('render-markdown-js');
 const moment = require("moment");
-const now = new Date();
-
 module.exports = function (eleventyConfig) {
     eleventyConfig.setTemplateFormats("njk,html,md");
-    
-    eleventyConfig.addPassthroughCopy('src');
-    eleventyConfig.addPassthroughCopy('css');
-    eleventyConfig.addPassthroughCopy('imgs');
-    eleventyConfig.addPassthroughCopy('js');
-    eleventyConfig.addPassthroughCopy('filters');
+
     eleventyConfig.addPassthroughCopy('assets');
-    eleventyConfig.addPassthroughCopy('admin');
 
     eleventyConfig.addCollection("servicios", function (collectionApi) {
         return collectionApi.getFilteredByTag('servicio');
